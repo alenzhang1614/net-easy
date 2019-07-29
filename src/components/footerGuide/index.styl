@@ -1,0 +1,49 @@
+@import '../../common/stylus/mixins.styl'
+footer
+  top-border-1px(#d9d9d9)
+  width 100%
+  height 2rem
+  position absolute
+  left 0
+  bottom 0
+  font-size 0.5rem
+  color #666
+  display flex
+  justify-content center
+  align-content center
+  .navbar
+    width 20%
+    display flex
+    flex-direction column
+    align-items center
+    justify-content center
+    i
+      width 0.8rem
+      height 0.9rem
+      background-color pink
+      display block
+      margin-bottom 0.2rem
+      background url('./images/tab-bottom.png') no-repeat
+      background-size cover
+      &.home-img
+        background-position center -5rem
+      &.item-img
+        background-position center -3rem
+      &.topic-img
+        background-position center -7rem
+      &.cart-img
+        background-position center -1rem
+      &.profile-img
+        background-position center -9rem
+    &.active
+      color #b4282d
+      .home-img
+        background-position center -4rem
+      .item-img
+        background-position center -2rem
+      .topic-img
+        background-position center -6rem
+      .cart-img
+        background-position center 0rem
+      .profile-img
+        background-position center -8rem

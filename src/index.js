@@ -1,4 +1,6 @@
 import React from 'react'
 import ReactDom from 'react-dom'
 import App from './App.jsx'
-ReactDom.render(<App />, document.getElementById("root"))
+import { BrowserRouter as Router } from 'react-router-dom'
+import './index.styl';
+ReactDom.render(<Router><App /></Router>, document.getElementById("root"))

@@ -1,0 +1,79 @@
+@media only screen and (-webkit-device-pixel-ratio: 2) {
+  .border-1px::before {
+    transform: scaleY(0.5);
+  }
+}
+@media only screen and (-webkit-device-pixel-ratio: 3) {
+  .border-1px::before {
+    transform: scaleY(0.333333);
+  }
+}
+footer {
+  position: relative;
+  width: 100%;
+  height: 2rem;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  font-size: 0.5rem;
+  color: #666;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+footer::before {
+  content: '';
+  position: absolute;
+  z-index: 200;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #d9d9d9;
+}
+footer .navbar {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+footer .navbar i {
+  width: 0.8rem;
+  height: 0.8rem;
+  background-color: #ffc0cb;
+  display: block;
+  margin-bottom: 0.2rem;
+  background: url("./images/tab-bottom.png") no-repeat;
+  background-size: cover;
+}
+footer .navbar i.home-img {
+  background-position: center -10em;
+}
+footer .navbar i.home-img.active {
+  background-position: center -8em;
+}
+footer .navbar i.item-img {
+  background-position: center -6.1em;
+}
+footer .navbar i.item-img.active {
+  background-position: center -6.9em;
+}
+footer .navbar i.topic-img {
+  background-position: center -14.2em;
+}
+footer .navbar i.topic-img.active {
+  background-position: center -6.9em;
+}
+footer .navbar i.cart-img {
+  background-position: center -2em;
+}
+footer .navbar i.cart-img.active {
+  background-position: center -2.8em;
+}
+footer .navbar i.profile-img {
+  background-position: center -18.2em;
+}
+footer .navbar i.profile-img.active {
+  background-position: center -18.3em;
+}
