@@ -8,6 +8,7 @@ import Profile from './pages/profile/inedx.jsx';
 import Topic from './pages/topic/index.jsx';
 export default class App extends Component {
 	render() {
+		console.log(this.props.location);
 		return (
 			<Fragment>
 				<Switch>

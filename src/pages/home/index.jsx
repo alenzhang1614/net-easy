@@ -1,6 +1,11 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
+import SearchHeader from '../../components/search-header/index.jsx';
 export default class Home extends Component {
 	render() {
-		return <div>Home</div>;
+		return (
+			<Fragment>
+				<SearchHeader />
+			</Fragment>
+		);
 	}
 }

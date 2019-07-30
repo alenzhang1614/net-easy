@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { NavLink, withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import './index.styl';
 class FooterGuide extends Component {
 	shouldComponentUpdate(nextProps, nextstate) {
@@ -9,29 +9,35 @@ class FooterGuide extends Component {
 		return nextPathName !== pathname;
 	}
 	render() {
+		console.log(this.props);
 		const { pathname } = this.props.location;
 		return (
 			<footer className="footer">
-				<NavLink to="/home" className={`navbar home ${pathname === '/home' ? 'active' : null}`}>
+				{/* ${pathname === '/home' ? 'active' : ''}` */}
+				<Link to="/home" className={`navbar home `}>
 					<i className="home-img" />
 					<span>首页</span>
-				</NavLink>
-				<NavLink to="/item" className={`navbar item ${pathname === '/item' ? 'active' : null}`}>
+				</Link>
+				{/* ${pathname === '/item' ? 'active' : ''} */}
+				<Link to="/item" className={`navbar item `}>
 					<i className="item-img" />
 					<span>分类</span>
-				</NavLink>
-				<NavLink to="/topic" className={`navbar topic ${pathname === '/topic' ? 'active' : null}`}>
+				</Link>
+				{/* ${pathname === '/topic' ? 'active' : ''}` */}
+				<Link to="/topic" className={`navbar topic`}>
 					<i className="topic-img" />
 					<span>识物</span>
-				</NavLink>
-				<NavLink to="/cart" className={`navbar cart ${pathname === '/cart' ? 'active' : null}`}>
+				</Link>
+				{/* ${pathname === '/cart' ? 'active' : ''} */}
+				<Link to="/cart" className={`navbar cart `}>
 					<i className="cart-img" />
 					<span>购物车</span>
-				</NavLink>
-				<NavLink to="/profile" className={`navbar profile ${pathname === '/profile' ? 'active' : null}`}>
+				</Link>
+				{/* ${pathname === '/profile' ? 'active' : ''} */}
+				<Link to="/profile" className={`navbar profile `}>
 					<i className="profile-img" />
 					<span>个人中心</span>
-				</NavLink>
+				</Link>
 			</footer>
 		);
 	}
