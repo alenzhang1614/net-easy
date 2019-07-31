@@ -27,10 +27,10 @@ export default class App extends Component {
 	componentWillMount() {
 		//const {isShowDropDown} = this.state
 	}
+	componentDidMount() {}
 	render() {
-		const { isShowDropDown } = this.state;
 		return (
-			<Fragment>
+			<div className="warp">
 				<Switch>
 					<Route path="/" component={Home} />
 					<Route path="/item" component={Item} />
@@ -41,7 +41,7 @@ export default class App extends Component {
 				</Switch>
 				<FooterGuide />
 				<DropDown />
-			</Fragment>
+			</div>
 		);
 	}
 }
