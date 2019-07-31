@@ -5,36 +5,33 @@ class FooterGuide extends Component {
 	shouldComponentUpdate(nextProps, nextstate) {
 		const nextPathName = nextProps.location.pathname;
 		const { pathname } = this.props.location;
-
 		return nextPathName !== pathname;
 	}
 	render() {
-		console.log(this.props);
 		const { pathname } = this.props.location;
 		return (
 			<footer className="footer">
-				{/* ${pathname === '/home' ? 'active' : ''}` */}
-				<Link to="/home" className={`navbar home `}>
+				<Link to="/" className={`navbar home ${pathname === '/' ? 'active' : ''} `}>
 					<i className="home-img" />
 					<span>首页</span>
 				</Link>
-				{/* ${pathname === '/item' ? 'active' : ''} */}
-				<Link to="/item" className={`navbar item `}>
+
+				<Link to="/item" className={`navbar item ${pathname === '/item' ? 'active' : ''}`}>
 					<i className="item-img" />
 					<span>分类</span>
 				</Link>
-				{/* ${pathname === '/topic' ? 'active' : ''}` */}
-				<Link to="/topic" className={`navbar topic`}>
+
+				<Link to="/topic" className={`navbar topic ${pathname === '/topic' ? 'active' : ''}`}>
 					<i className="topic-img" />
 					<span>识物</span>
 				</Link>
-				{/* ${pathname === '/cart' ? 'active' : ''} */}
-				<Link to="/cart" className={`navbar cart `}>
+
+				<Link to="/cart" className={`navbar cart ${pathname === '/cart' ? 'active' : ''}`}>
 					<i className="cart-img" />
 					<span>购物车</span>
 				</Link>
-				{/* ${pathname === '/profile' ? 'active' : ''} */}
-				<Link to="/profile" className={`navbar profile `}>
+
+				<Link to="/profile" className={`navbar profile ${pathname === '/profile' ? 'active' : ''}`}>
 					<i className="profile-img" />
 					<span>个人中心</span>
 				</Link>

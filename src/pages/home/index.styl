@@ -1,0 +1,76 @@
+.menu-container
+  position relative
+  .menuWarp
+    overflow hidden
+    .menuList
+      display flex
+      padding-right 1.5rem
+      .menuItem
+        text-align center
+        white-space nowrap
+        padding-left 1rem
+        display flex
+        justify-content center
+        align-items center
+        height 1.5rem
+        a
+          font-size 0.7rem
+  .arrow
+    position absolute
+    right 0
+    top 0
+    height 100%
+    background-color #fff
+    width 1.5rem
+    display flex
+    justify-content center
+    align-items center
+    z-index 500
+    img
+      width 0.8rem
+      transition all 0.5s
+  .menu-drop-down-warp
+    position absolute
+    top 0
+    left 0
+    background-color #fff
+    z-index 400
+    .menu-drop-down-title
+      font-size 0.8rem
+      height 1.5rem
+      line-height 1.5rem
+      margin-bottom 0.5rem
+      margin-left 0.7rem
+    .menu-drop-down
+      width 100%
+      display flex
+      flex-wrap wrap
+      .menu-drop-down-item
+        display flex
+        align-items center
+        justify-content center
+        height 1rem
+        margin-bottom 1rem
+        margin-left 0.7rem
+        .menu-drop-down-text
+          display block
+          width 3rem
+          height 1rem
+          line-height 1rem
+          text-align center
+          background-color #FAFAFA
+          border 1px solid #ccc
+          font-size 0.5rem
+          border-radius 0.1rem
+          &.active
+            color #b4282d
+            border-color #b4282d
+.swiper-container
+  img 
+    width 100%
+  .swiper-pagination-bullet
+    background #eee
+    width 1rem
+    height 0.1rem
+    border-radius 0.05rem
+
