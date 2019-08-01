@@ -1,0 +1,81 @@
+@import '../../common/stylus/mixins.styl'
+.search-wrap
+  position absolute
+  left 0
+  top 0
+  z-index 501
+  width 100%
+  background-color #fff
+  .search-item
+    width 100%
+    box-sizing border-box
+    padding 0 0.8rem
+    &.search-header
+      height 2rem
+      display flex
+      justify-content center
+      font-size 0.7rem
+      align-items center
+      justify-content space-between
+      .search-input-warp
+        position relative
+        width 88%
+        height 1.2rem
+        .search-input
+          box-sizing border-box
+          padding-left 1.5rem
+          width 100%
+          height 100%
+          background-position 1rem center
+          background-size 1.5rem 1.5rem
+          background-repeat no-repeat
+          border-radius 0.1rem
+          background-color #ededed
+        img
+          position absolute
+          width 0.7rem
+          left 0.5rem
+          top 50%
+          transform translateY(-50%)
+      .searchBtn
+        background transparent
+        border none
+        -webkit-appearance none
+        appearance none
+        width 12%
+        padding 0
+    &.search-history
+      border-bottom 0.4rem solid #ededed
+      padding-top 0.5rem
+      padding-bottom 0.5rem
+      .history-title
+        overflow hidden
+        margin-bottom 0.3rem
+        span
+          height 1rem
+          &.history-text
+            font-size 0.7rem
+            float left
+            color #666
+          &.clearIcon
+            float right
+            width 1rem
+            background url('//yanxuan-static.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/del1-bc0cf01720.png') center center no-repeat
+            background-size contain
+      .history-content
+        overflow hidden
+        padding-right 0
+        margin-right -0.8rem
+        margin-bottom -0.5rem
+        span
+          float left
+          margin-right 0.8rem
+          margin-bottom 0.5rem
+          border 1px solid #999
+          border-radius 0.2rem
+          color #666666
+          font-size 0.5rem
+          padding 0.2rem 0.4rem
+          &.active
+            border-color $red
+            color $red

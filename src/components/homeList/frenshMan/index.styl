@@ -1,0 +1,81 @@
+@import '../../../common/stylus/mixins.styl'
+.freshMan-warp
+  background-color #fff
+  width 100%
+  box-sizing border-box
+  .freshMan-title
+    padding 0.5rem 0
+    font-size $titleSize
+    text-align center
+    color $black
+  .freshmanContent-title
+    font-size $titleSize
+    color #333
+  .freshmanContent-subtitle
+    font-size 0.5rem
+    color #666
+  .freshMan-content
+    overflow hidden
+    font-size 0.7rem
+    .freshman-left
+      box-sizing border-box
+      padding 0.5rem 0rem 0rem 0.6rem
+      position relative
+      float left
+      width 50%
+      height 10rem
+      background-color #F9E9CF
+      border-right 0.1rem solid #ffffff
+      img
+        position absolute
+        width 80%
+        left 50%
+        top 50%
+        transform translate(-50%, -50%)
+    .freshman-right
+      float right
+      width 50%
+      height 10rem
+      .freshman-right-item
+        position relative
+        box-sizing border-box
+        padding 0.5rem 0rem 0rem 0.6rem
+        height 5rem
+        img
+          position absolute
+          width 4.5rem
+          right 0
+          bottom 0
+        .price
+          position absolute
+          right 0.8rem
+          top 0.5rem
+          width 1.5rem
+          height 1.5rem
+          background-color #F59524
+          opacity 0.9
+          border-radius 50%
+          font-size 0.5rem
+          display flex
+          flex-direction column
+          justify-content center
+          span
+            display block
+            text-align center
+            &.newPrice
+              color #fff
+            &.oldPrice
+              color #fff
+              text-decoration line-through
+        &.freshman-off-price
+          background #FBE2D3
+          margin-bottom 0.1rem
+          .freshmanContent-title
+            margin-bottom 0.2rem
+        &.freshman-group
+          background-color #FFECC2
+          .freshmanContent-subtitle
+            background-color #CBB693
+            padding 0 0.2rem
+            color #fff
+            border-radius 0.1rem

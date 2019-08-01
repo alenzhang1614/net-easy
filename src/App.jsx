@@ -30,7 +30,7 @@ export default class App extends Component {
 	componentDidMount() {}
 	render() {
 		return (
-			<div className="warp">
+			<Fragment>
 				<Switch>
 					<Route path="/" component={Home} />
 					<Route path="/item" component={Item} />
@@ -41,7 +41,7 @@ export default class App extends Component {
 				</Switch>
 				<FooterGuide />
 				<DropDown />
-			</div>
+			</Fragment>
 		);
 	}
 }
