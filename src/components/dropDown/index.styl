@@ -1,10 +1,40 @@
-
+.menu-drop-down-warp
+  position absolute
+  top 3.4rem
+  left 0
+  bottom 0
+  background-color rgba(0, 0, 0, 0.5)
+  z-index 400
+  .menu-drop-down
+    width 100%
+    display flex
+    flex-wrap wrap
+    background #fff
+    padding 1rem 0
+    margin-bottom -1rem
+    .menu-drop-down-item
+      display flex
+      align-items center
+      justify-content center
+      height 1rem
+      margin-bottom 1rem
+      margin-left 0.7rem
+      .menu-drop-down-text
+        display block
+        width 3rem
+        height 1rem
+        line-height 1rem
+        text-align center
+        background-color #FAFAFA
+        border 1px solid #ccc
+        font-size 0.5rem
+        border-radius 0.1rem
+        &.active
+          color #b4282d
+          border-color #b4282d
   .mask
-    position absolute
     width 100%
     top 2rem
     left 0
     bottom 0
     z-index 300
-    background-color rgba(0, 0, 0, 0.5)
-   

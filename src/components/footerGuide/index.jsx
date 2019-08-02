@@ -1,22 +1,41 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import './index.styl';
+import PubSub from 'pubsub-js';
 class FooterGuide extends Component {
+	state = {
+		categoryId: ''
+	};
 	shouldComponentUpdate(nextProps, nextstate) {
 		const nextPathName = nextProps.location.pathname;
 		const { pathname } = this.props.location;
 		return nextPathName !== pathname;
 	}
+	componentWillMount() {
+		// PubSub.subscribe('setCategoryId', (msg, data) => {
+		// 	this.setState({
+		// 		categoryId: data
+		// 	});
+		// });
+	}
+	componentDidMount() {
+		PubSub.subscribe('setCategoryId', (msg, data) => {
+			this.setState({
+				categoryId: data
+			});
+		});
+	}
 	render() {
 		const { pathname } = this.props.location;
+		const { categoryId } = this.state;
+		console.log(categoryId);
 		return (
 			<footer className="footer">
-				<Link to="/" className={`navbar home ${pathname === '/' ? 'active' : ''} `}>
+				<Link to="/index" className={`navbar home ${pathname === '/index' ? 'active' : ''} `}>
 					<i className="home-img" />
 					<span>首页</span>
 				</Link>
-
-				<Link to="/item" className={`navbar item ${pathname === '/item' ? 'active' : ''}`}>
+				<Link to="/item/cateList" className={`navbar item ${pathname === '/item/cateList' ? 'active' : ''}`}>
 					<i className="item-img" />
 					<span>分类</span>
 				</Link>

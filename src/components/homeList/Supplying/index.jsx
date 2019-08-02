@@ -8,7 +8,6 @@ export default class Supplying extends Component {
 	};
 	render() {
 		const { data } = this.props;
-		console.log(data);
 		return (
 			<Fragment>
 				<Title left={data.title} right={true} toPage={data.toPage} />

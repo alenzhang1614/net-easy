@@ -12,22 +12,33 @@ export default class DropDown extends Component {
 		this.setState({ isShowDropDown });
 		PubSub.publish('toogleShow', isShowDropDown);
 	};
-	componentWillMount() {
-		PubSub.subscribe('toogleShow', (msg, data) => {
-			this.setState({
-				isShowDropDown: data
-			});
-		});
-	}
+	// componentWillMount() {
+	// 	PubSub.subscribe('toogleShow', (msg, data) => {
+	// 		this.setState({
+	// 			isShowDropDown: data
+	// 		});
+	// 	});
+	// }
+	// style={{ display: isShowDropDown ? 'block' : 'none' }}
 	render() {
-		const { isShowDropDown } = this.state;
+		const { isShowDropDown, id } = this.state;
+		console.log(isShowDropDown);
 		return (
 			<Fragment>
-				<div
-					className="mask"
-					style={{ display: `${isShowDropDown ? 'block' : 'none'}` }}
-					onClick={this.toggleShow}
-				/>
+				<div className="menu-drop-down-warp">
+					<ul className="menu-drop-down">
+						{menuList.map(item => {
+							return (
+								<li className="menu-drop-down-item" key={item.key}>
+									<a href="###" className={`menu-drop-down-text ${id === item.key ? 'active' : ''}`}>
+										{item.title}
+									</a>
+								</li>
+							);
+						})}
+					</ul>
+					<div className="mask" onClick={this.toggleShow} />
+				</div>
 			</Fragment>
 		);
 	}

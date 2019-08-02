@@ -1,0 +1,15 @@
+{
+	"data": {
+		"showEntrance": true,
+		"showGiftWin": false,
+		"showItemDetailGiftWin": true,
+		"newUserGift": {
+			"title": "新人礼",
+			"showPic": "https://yanxuan.nosdn.127.net/3b71d8316984788388aee5313597b6d4.png",
+			"token": "4ca6de7f4fa9512acc27f538a1bc602f"
+		},
+		"winType": 2,
+		"newUser": true
+	},
+	"code": "200"
+}

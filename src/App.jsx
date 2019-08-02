@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import FooterGuide from './components/footerGuide';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import Home from './pages/home/index.jsx';
 import Item from './pages/item/index.jsx';
 import Cart from './pages/cart/index.jsx';
@@ -8,40 +8,54 @@ import Profile from './pages/profile/inedx.jsx';
 import Topic from './pages/topic/index.jsx';
 //引入菜单下拉列表
 import DropDown from './components/dropDown/index.jsx';
-
-//import { Button } from 'antd-mobile';
-//import 'antd-mobile/lib/date-picker/style/css';
-/* 		"start": "node scripts/start.js --open",
-		"build": "node scripts/build.js",
-		"test": "node scripts/test.js" */
-export default class App extends Component {
+//引入搜索组件
+import Search from './pages/search/index';
+import PubSub from 'pubsub-js';
+class App extends Component {
 	state = {
-		isShowDropDown: false
-	};
-	toggleShow = () => {
-		const { isShowDropDown } = this.state;
-		this.setState({
-			isShowDropDown: !isShowDropDown
-		});
+		isShowDropDown: false,
+		categoryId: ''
 	};
 	componentWillMount() {
-		//const {isShowDropDown} = this.state
+		PubSub.subscribe('toogleShow', (msg, data) => {
+			this.setState({
+				isShowDropDown: data
+			});
+		});
+
+		PubSub.subscribe('setCategoryId', (msg, data) => {
+			this.setState({
+				categoryId: data
+			});
+		});
 	}
 	componentDidMount() {}
+
+	// setCategoryId = categoryId => {
+	// 	this.setState({
+	// 		categoryId
+	// 	});
+	// };
 	render() {
+		//	console.log('加载app');
+		const { isShowDropDown, categoryId } = this.state;
+		const { pathname } = this.props.location;
+
 		return (
 			<Fragment>
 				<Switch>
-					<Route path="/" component={Home} />
-					<Route path="/item" component={Item} />
+					<Route path="/index" component={Home} />
+					<Route path="/item/cateList" component={Item} />
 					<Route path="/cart" component={Cart} />
 					<Route path="/topic" component={Topic} />
 					<Route path="/profile" component={Profile} />
-					<Redirect to="/" />
+					<Route path="/search" component={Search} />
+					<Redirect to="/index" />
 				</Switch>
-				<FooterGuide />
-				<DropDown />
+				{pathname === '/search' ? null : <FooterGuide />}
+				{isShowDropDown ? <DropDown /> : null}
 			</Fragment>
 		);
 	}
 }
+export default withRouter(App);

@@ -8,6 +8,7 @@
 		"@typescript-eslint/eslint-plugin": "1.6.0",
 		"@typescript-eslint/parser": "1.6.0",
 		"antd-mobile": "^2.2.14",
+		"axios": "^0.19.0",
 		"babel-eslint": "10.0.1",
 		"babel-jest": "^24.8.0",
 		"babel-loader": "^8.0.5",
@@ -76,16 +77,8 @@
 		"extends": "react-app"
 	},
 	"browserslist": {
-		"production": [
-			">0.2%",
-			"not dead",
-			"not op_mini all"
-		],
-		"development": [
-			"last 1 chrome version",
-			"last 1 firefox version",
-			"last 1 safari version"
-		]
+		"production": [">0.2%", "not dead", "not op_mini all"],
+		"development": ["last 1 chrome version", "last 1 firefox version", "last 1 safari version"]
 	},
 	"devDependencies": {
 		"babel-plugin-import": "^1.12.0",
@@ -95,13 +88,8 @@
 		"stylus-loader": "^3.0.2"
 	},
 	"jest": {
-		"collectCoverageFrom": [
-			"src/**/*.{js,jsx,ts,tsx}",
-			"!src/**/*.d.ts"
-		],
-		"setupFiles": [
-			"react-app-polyfill/jsdom"
-		],
+		"collectCoverageFrom": ["src/**/*.{js,jsx,ts,tsx}", "!src/**/*.d.ts"],
+		"setupFiles": ["react-app-polyfill/jsdom"],
 		"setupFilesAfterEnv": [],
 		"testMatch": [
 			"<rootDir>/src/**/__tests__/**/*.{js,jsx,ts,tsx}",
@@ -122,27 +110,11 @@
 			"^react-native$": "react-native-web",
 			"^.+\\.module\\.(css|sass|scss)$": "identity-obj-proxy"
 		},
-		"moduleFileExtensions": [
-			"web.js",
-			"js",
-			"web.ts",
-			"ts",
-			"web.tsx",
-			"tsx",
-			"json",
-			"web.jsx",
-			"jsx",
-			"node"
-		],
-		"watchPlugins": [
-			"jest-watch-typeahead/filename",
-			"jest-watch-typeahead/testname"
-		]
+		"moduleFileExtensions": ["web.js", "js", "web.ts", "ts", "web.tsx", "tsx", "json", "web.jsx", "jsx", "node"],
+		"watchPlugins": ["jest-watch-typeahead/filename", "jest-watch-typeahead/testname"]
 	},
 	"babel": {
-		"presets": [
-			"react-app"
-		],
+		"presets": ["react-app"],
 		"plugins": [
 			[
 				"import",
@@ -152,5 +124,6 @@
 				}
 			]
 		]
-	}
+	},
+	"proxy": "http://m.you.163.com"
 }

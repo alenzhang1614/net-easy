@@ -1,0 +1,88 @@
+@import '../../common/stylus/mixins.styl'
+.catelist-container
+  width 100%
+  height 100%
+  position relative
+  background-color #fff
+  .catelist-warp
+    height 2rem
+    width 100%
+    box-sizing border-box
+    padding 0 0.5rem
+    display flex
+    align-items center
+    border-bottom 1px solid #ededed
+    .cateList-header
+      width 100%
+  .catalist-main
+    position absolute
+    box-sizing border-box
+    padding-right 0.5rem
+    left 0
+    top 2rem
+    bottom 2rem
+    right 0
+    background #ffffff
+    overflow hidden
+    .catelist-nav-container
+      float left
+      width 25%
+      font-size 0.6rem
+      height 100%
+      .catelist-nav-list
+        display flex
+        flex-direction column
+        height 200%
+        box-sizing border-box
+        padding 0.5rem 0
+        justify-content space-between
+        .catelist-nav-item
+          height 1.8rem
+          color #333
+          p
+            margin-top 0.5rem
+            border-left 2px solid transparent
+            padding-left 0.4rem
+            height 1rem
+            line-height 1rem
+          &.active
+            color $red
+            p
+              border-left-color $red
+              box-sizing border-box
+    .catelist-con-container
+      box-sizing border-box
+      float right
+      width 75%
+      height 100%
+      .catelist-con-warp
+        margin-top 0.5rem
+        .swiper-container
+          img
+            width 100%
+        .catelist-outer-list
+          width 100%
+          margin-top 0.8rem
+          .catelist-outer-item
+            .catelist-outer-title
+              height 1rem
+              font-size 0.8rem
+              margin-bottom 0.8rem
+              font-size 0.6rem
+              font-weight 900
+              border-bottom 1px solid #cccccc
+            .catelist-inner-list
+              display flex
+              flex-wrap wrap
+              justify-content space-between
+              .catelist-inner-item
+                font-size 0.5rem
+                margin-bottom 0.8rem
+                img
+                  width 3rem
+                  height 3rem
+                p
+                  width 3rem
+                  text-align center
+                  line-height 1rem
+                  color #333

@@ -11,7 +11,6 @@ import { swiperImg } from '../../config/menu-config/menu.config';
 
 //引入homelist组件
 import HomeList from '../../components/homeList/index';
-import Search from '../search';
 export default class Home extends Component {
 	state = {
 		isShowDropDown: false,
@@ -23,7 +22,6 @@ export default class Home extends Component {
 		const menuList = this.menuRef.current;
 		const menuItems = menuList.children;
 		const menuListWidth = [].slice.call(menuItems).reduce((prev, curr) => {
-			console.log(curr.offsetWidth);
 			prev += curr.offsetWidth;
 			return prev;
 		}, 0);
@@ -35,13 +33,12 @@ export default class Home extends Component {
 		this.setState({ isShowDropDown });
 		PubSub.publish('toogleShow', isShowDropDown);
 	};
-
 	componentWillMount() {
-		PubSub.subscribe('toogleShow', (msg, data) => {
-			this.setState({
-				isShowDropDown: data
-			});
-		});
+		// PubSub.subscribe('toogleShow', (msg, data) => {
+		// 	this.setState({
+		// 		isShowDropDown: data
+		// 	});
+		// });
 	}
 	componentDidMount() {
 		setTimeout(() => {
@@ -69,7 +66,7 @@ export default class Home extends Component {
 	}
 
 	render() {
-		const { isShowDropDown, id } = this.state;
+		const { isShowDropDown } = this.state;
 		return (
 			<Fragment>
 				<header className="headerContainer">
@@ -78,12 +75,15 @@ export default class Home extends Component {
 							<img src={require('./imges/logo.png')} alt="" />
 						</h1>
 						<div className="search-warp" onTouchEnd={this.gotoSearch}>
-							<SearchHeader />
+							<SearchHeader fromPage="home" />
 						</div>
 						<button className="header-login">登录</button>
 					</div>
 					<div className="menu-container">
-						<div className="menuWarp">
+						<div className="menuAll" style={{ display: isShowDropDown ? 'block' : 'none' }}>
+							全部频道
+						</div>
+						<div className="menuWarp" style={{ display: isShowDropDown ? 'none' : 'block' }}>
 							<ul className="menuList" ref={this.menuRef}>
 								{menuList.map(item => {
 									return (
@@ -94,6 +94,7 @@ export default class Home extends Component {
 								})}
 							</ul>
 						</div>
+
 						<div className="arrow">
 							<img
 								src={require('./imges/arrow.png')}
@@ -101,23 +102,6 @@ export default class Home extends Component {
 								onClick={this.toggleShow}
 								style={{ transform: isShowDropDown ? 'rotate(180deg)' : 'rotate(0deg)' }}
 							/>
-						</div>
-						<div className="menu-drop-down-warp" style={{ display: isShowDropDown ? 'block' : 'none' }}>
-							<h2 className="menu-drop-down-title">全部频道</h2>
-							<ul className="menu-drop-down">
-								{menuList.map(item => {
-									return (
-										<li className="menu-drop-down-item" key={item.key}>
-											<a
-												href="###"
-												className={`menu-drop-down-text ${id === item.key ? 'active' : ''}`}
-											>
-												{item.title}
-											</a>
-										</li>
-									);
-								})}
-							</ul>
 						</div>
 					</div>
 				</header>
@@ -152,7 +136,6 @@ export default class Home extends Component {
 						<HomeList />
 					</div>
 				</div>
-				<Search />
 			</Fragment>
 		);
 	}

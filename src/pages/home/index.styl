@@ -36,11 +36,18 @@
   .menu-container
     position relative
     background-color #fff
+    padding-right 2.5rem
+    box-sizing border-box
+    .menuAll
+      background-color #fff
+      font-size 0.7rem
+      height 1.5rem
+      line-height 1.5rem
+      padding-left 0.5rem
     .menuWarp
       overflow hidden
       .menuList
         display flex
-        padding-right 1.5rem
         .menuItem
           text-align center
           white-space nowrap
@@ -54,6 +61,7 @@
   .arrow
     position absolute
     right 0
+    padding-right 0.5rem
     top 0
     height 100%
     background-color #fff
@@ -63,44 +71,8 @@
     align-items center
     z-index 500
     img
-      width 0.8rem
+      width 0.7rem
       transition all 0.5s
-  .menu-drop-down-warp
-    position absolute
-    top 0
-    left 0
-    background-color #fff
-    z-index 400
-    .menu-drop-down-title
-      font-size 0.8rem
-      height 1.5rem
-      line-height 1.5rem
-      margin-bottom 0.5rem
-      margin-left 0.7rem
-    .menu-drop-down
-      width 100%
-      display flex
-      flex-wrap wrap
-      .menu-drop-down-item
-        display flex
-        align-items center
-        justify-content center
-        height 1rem
-        margin-bottom 1rem
-        margin-left 0.7rem
-        .menu-drop-down-text
-          display block
-          width 3rem
-          height 1rem
-          line-height 1rem
-          text-align center
-          background-color #FAFAFA
-          border 1px solid #ccc
-          font-size 0.5rem
-          border-radius 0.1rem
-          &.active
-            color #b4282d
-            border-color #b4282d
 .mainWarp
   position absolute
   top 3.5rem

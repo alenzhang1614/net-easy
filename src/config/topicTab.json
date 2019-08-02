@@ -1,0 +1,69 @@
+{
+    "code": "200",
+    "data": [
+        {
+            "tabId": 20,
+            "tabName": "盛夏特别版",
+            "tabType": 2,
+            "defaultShow": true,
+            "linkUrl": "https://m.you.163.com/topic/v1/pub/lvJSGQ8VnI.html",
+            "linkType": 0
+        },
+        {
+            "tabId": 9,
+            "tabName": "推荐",
+            "tabType": 3,
+            "defaultShow": false,
+            "linkUrl": null,
+            "linkType": null
+        },
+        {
+            "tabId": 14,
+            "tabName": "好货内部价",
+            "tabType": 2,
+            "defaultShow": false,
+            "linkUrl": "https://m.you.163.com/topic/v1/pub/MZee3MWrbs.html",
+            "linkType": 0
+        },
+        {
+            "tabId": 12,
+            "tabName": "回购榜",
+            "tabType": 2,
+            "defaultShow": false,
+            "linkUrl": "https://m.you.163.com/topic/v1/pub/GpCIMFZBO2.html",
+            "linkType": 0
+        },
+        {
+            "tabId": 7,
+            "tabName": "晒单",
+            "tabType": 2,
+            "defaultShow": false,
+            "linkUrl": "https://m.you.163.com/topic/static/look/index",
+            "linkType": 1
+        },
+        {
+            "tabId": 18,
+            "tabName": "开发者日记",
+            "tabType": 2,
+            "defaultShow": false,
+            "linkUrl": "https://m.you.163.com/topic/v1/pub/xtEK6HyhUM.html?_t=1555049149751",
+            "linkType": 0
+        },
+        {
+            "tabId": 4,
+            "tabName": "达人",
+            "tabType": 0,
+            "defaultShow": false,
+            "linkUrl": null,
+            "linkType": null
+        },
+        {
+            "tabId": 6,
+            "tabName": "HOME",
+            "tabType": 0,
+            "defaultShow": false,
+            "linkUrl": null,
+            "linkType": null
+        }
+    ]
+}
