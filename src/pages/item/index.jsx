@@ -39,6 +39,9 @@ export default class Item extends Component {
 		new BScroll('.catelist-nav-container', {
 			click: true
 		});
+		// setTimeout(() => {
+
+		// });
 	}
 	//循环遍历生成界面
 
